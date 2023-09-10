@@ -1,0 +1,214 @@
+@font-face {
+  font-family: "roboto";
+  src: url(../assets/fonts/Roboto-Regular.ttf);
+}
+@font-face {
+  font-family: "roboto-bold";
+  src: url(../assets/fonts/Roboto-Bold.ttf);
+}
+:root {
+  --Tomato: hsl(4, 100%, 67%);
+  --Dark_Slate_Grey: hsl(234, 29%, 20%);
+  --Charcoal_Grey: hsl(235, 18%, 26%);
+  --Grey: hsl(231, 7%, 60%);
+  --White: hsl(0, 0%, 100%);
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "roboto";
+  font-size: 16px;
+}
+body {
+  min-height: 100vh;
+  min-width: 100vw;
+}
+main {
+  transition: all 0.3s;
+}
+.Img {
+  min-width: 280px;
+  height: 40vh;
+  background: url(../assets/images/illustration-sign-up-mobile.svg) no-repeat;
+  background-position: bottom;
+  background-size: cover;
+  border-radius: 0 0 25px 25px;
+}
+@media screen and (min-width: 400px) {
+  .Img {
+    height: 34.1vh;
+    background-position: center;
+  }
+}
+.text {
+  margin: 0 auto;
+  margin-top: 3em;
+  padding: 0 30px;
+}
+.title {
+  font-family: "roboto-bold";
+  font-size: 2.5em;
+  margin-bottom: 0.5em;
+  color: var(--Dark_Slate_Grey);
+}
+p {
+  color: var(--Charcoal_Grey);
+  line-height: 22px;
+  margin-bottom: 1em;
+}
+.item {
+  margin: 0 0 0.4rem 2rem;
+  position: relative;
+}
+.item::before {
+  content: url(../assets/images/icon-list.svg);
+  position: absolute;
+  left: -2rem;
+}
+.form {
+  margin: 2rem auto 1rem;
+  padding-left: 2rem;
+}
+label {
+  font-size: 12px;
+  font-weight: 700;
+  display: block;
+  color: var(--Charcoal_Grey);
+  position: relative;
+  transition: all .3s;
+}
+#email,
+button {
+  width: 90%;
+  height: 3.5rem;
+  margin: 10px 0;
+}
+#email {
+  padding: 0 1.5rem;
+  outline: none;
+  border: 1px solid var(--Grey);
+  border-radius: 7px;
+  transition: all .3s;
+}
+#email::placeholder {
+  color: var(--Grey);
+}
+#email:focus {
+  border: 1px solid var(--Dark_Slate_Grey);
+}
+button {
+  outline: none;
+  border: none;
+  background-color: var(--Dark_Slate_Grey);
+  border-radius: 7px;
+  color: var(--White);
+  font-weight: 600;
+  transition: all 0.3s ease-in-out;
+}
+button:hover {
+  background: linear-gradient(
+    to right,
+    hwb(337 0% 3% / 0.74),
+    hsl(12, 92%, 63%)
+  );
+}
+button:active {
+  background: linear-gradient(to right, hsl(0, 88%, 68%), hsl(12, 92%, 63%));
+  transform: translate(-3px, 2px);
+}
+.afterClickBox {
+  width: 100%;
+  padding: 8rem 1rem 1rem;
+  transition: all 0.3s;
+  display: none;
+}
+.icon {
+  content: url(../assets/images/icon-success.svg);
+  margin-bottom: 2rem;
+}
+#userEmail {
+  font-family: "roboto-bold";
+  color: var(--Dark_Slate_Grey);
+}
+.afterClickBox > p {
+  margin-bottom: 10rem;
+}
+.button {
+  width: 100%;
+  text-align: center;
+}
+@media screen and (min-width: 1000px) {
+  body {
+    display: grid;
+    background-color: var(--Dark_Slate_Grey);
+    place-items: center;
+  }
+  main {
+    display: flex;
+    position: relative;
+    flex-flow: row-reverse;
+    background-color: var(--White);
+    width: 770px;
+    border-radius: 20px;
+    overflow: hidden;
+    padding: 20px;
+  }
+  .title {
+    font-size: 3rem;
+  }
+  .right {
+    width: 50%;
+  }
+  .Img {
+    width: 50%;
+    height: auto;
+    background: url(../assets/images/illustration-sign-up-desktop.svg) no-repeat;
+    background-size: cover;
+    background-position: right;
+    border-radius: 7px;
+  }
+  #email:focus .Img {
+    border-radius: 0px 0px 0px 0px;
+  }
+  button:hover .Img {
+    border-radius: 0;
+  }
+  .afterClickBox {
+    background-color: var(--White);
+    width: 380px;
+    padding: 1rem 2rem;
+    border-radius: 20px;
+  }
+  .afterClickBox > p {
+    margin-bottom: 0.3rem;
+  }
+  #end {
+    width: 100%;
+    height: 3rem;
+  }
+  .icon {
+    display: block;
+    width: 40px;
+    margin-bottom: 1em;
+  }
+  .afterClickBox > .title {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    padding: 0 4rem 0 0;
+  }
+  .afterClickBox > p,
+  p > span {
+    font-size: 13px;
+  }
+}
+
+.err > label::after{
+  content: "Valid email required";
+  color: var(--Tomato);
+  font-size: 13px;
+  display: block;
+  position: absolute;
+  right: 10%;
+  top: 2%;
+}
